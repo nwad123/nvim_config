@@ -10,8 +10,11 @@ return {
     config = function()
         local wk = require("which-key")
         wk.register({
-            f = { name = "file" },
+            f = {
+                name = "file",
+                n = { "<cmd>new<cr>", "New files" }
+            },
             l = { name = "lsp" }
-        }, { prefix = "<leader>"})
+        }, { prefix = "<leader>" })
     end
 }

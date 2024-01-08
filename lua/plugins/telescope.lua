@@ -1,8 +1,8 @@
 return {
     {
-	    "nvim-telescope/telescope.nvim",
-	    branch = "0.1.x",
-	    dependencies = { "nvim-lua/plenary.nvim"},
+        "nvim-telescope/telescope.nvim",
+        branch = "0.1.x",
+        dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
             {
                 "<leader>ff",
@@ -13,6 +13,23 @@ return {
                 "<leader>fg",
                 function() require("telescope.builtin").live_grep() end,
                 desc = "Live grep on project"
+            },
+            {
+                "<leader>fo",
+                function()
+                    vim.cmd("Telescope find_files initial_mode=normal")
+                end,
+                desc = "Open files"
+            },
+            {
+                "<leader>fr",
+                function() require("telescope.builtin").oldfiles() end,
+                desc = "Recent files"
+            }
+        },
+        opts = {
+            defaults = {
+                borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┙", "┗" }
             }
         }
     },
