@@ -7,10 +7,15 @@ return {
         "MunifTanjim/nui.nvim",
     },
     opts = {
-        close_if_last_window = false
+        close_if_last_window = true,
+        window = {
+            position = "left",
+            width = 26
+        },
+
     },
     keys = {
         { "<leader>ft", "<cmd>Neotree toggle position=left<cr>", desc = "Toggle file tree" },
-        { "<leader>fe", "<cmd>Neotree focus<cr>", desc = "Focus on file tree if open" },
+        { "<leader>fe", "<cmd>Neotree focus<cr>",                desc = "Focus on file tree if open" },
     }
 }

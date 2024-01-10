@@ -8,4 +8,3 @@ set.relativenumber = true
 set.expandtab = true
 
 vim.g.mapleader = " "
-

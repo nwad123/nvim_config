@@ -14,7 +14,17 @@ return {
                 name = "file",
                 n = { "<cmd>new<cr>", "New files" }
             },
-            l = { name = "lsp" }
+            l = { name = "lsp" },
+            w = {
+                name = 'window',
+                s = { "<cmd>split<cr>", "split" },
+                v = { "<cmd>vsplit<cr>", "vertical split" },
+                w = { "<cmd>wq<cr>", "write and close" },
+                h = { "<cmd>wincmd h<cr>", "move left" },
+                j = { "<cmd>wincmd j<cr>", "move down" },
+                k = { "<cmd>wincmd k<cr>", "move up" },
+                l = { "<cmd>wincmd l<cr>", "move right" },
+            },
         }, { prefix = "<leader>" })
     end
 }
