@@ -12,14 +12,15 @@ return {
         wk.register({
             f = {
                 name = "file",
-                n = { "<cmd>new<cr>", "New files" }
+                n = { "<cmd>new<cr>", "New files" },
+                w = { "<cmd>w<cr>", "Write file" },
             },
             l = { name = "lsp" },
             w = {
                 name = 'window',
                 s = { "<cmd>split<cr>", "split" },
                 v = { "<cmd>vsplit<cr>", "vertical split" },
-                w = { "<cmd>wq<cr>", "write and close" },
+                c = { "<cmd>wq!<cr>", "write and close" },
                 h = { "<cmd>wincmd h<cr>", "move left" },
                 j = { "<cmd>wincmd j<cr>", "move down" },
                 k = { "<cmd>wincmd k<cr>", "move up" },

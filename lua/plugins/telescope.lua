@@ -6,12 +6,18 @@ return {
         keys = {
             {
                 "<leader>ff",
-                function() require("telescope.builtin").find_files() end,
+                function() require("telescope.builtin").find_files({
+                    layout_strategy = 'vertical',
+                }) end,
                 desc = "Search for files"
             },
             {
                 "<leader>fg",
-                function() require("telescope.builtin").live_grep() end,
+                function()
+                    require("telescope.builtin").live_grep({
+                        layout_strategy = 'vertical',
+                    })
+                end,
                 desc = "Live grep on project"
             },
             {
