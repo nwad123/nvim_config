@@ -8,6 +8,5 @@ set.relativenumber = true
 set.expandtab = true
 set.scrolloff = 8
 set.wrap = true
-set.smoothscroll = true
 
 vim.g.mapleader = " "
