@@ -36,7 +36,7 @@ return {
             },
             {
                 -- Window keybindings
-                mode = { "n", "v" },
+                mode = { "n" },
                 { "<leader>w",  group = "window" },
                 { "<leader>ws", "<cmd>split<cr>",    desc = "split" },
                 { "<leader>wv", "<cmd>vsplit<cr>",   desc = "vertical split" },
