@@ -6,38 +6,47 @@ return {
         keys = {
             {
                 "<leader>ff",
-                function() require("telescope.builtin").find_files({
-                    layout_strategy = 'vertical',
-                }) end,
-                desc = "Search for files"
+                function()
+                    require("telescope.builtin").find_files()
+                end,
+                desc = "Find files by name",
             },
             {
                 "<leader>fg",
                 function()
-                    require("telescope.builtin").live_grep({
-                        layout_strategy = 'vertical',
-                    })
+                    require("telescope.builtin").live_grep()
                 end,
-                desc = "Live grep on project"
+                desc = "Live grep in cwd",
             },
             {
                 "<leader>fo",
                 function()
-                    vim.cmd("Telescope find_files initial_mode=normal")
+                    require("telescope.builtin").find_files({ initial_mode = "normal" })
                 end,
-                desc = "Open files"
+                desc = "Find files in cwd",
             },
             {
                 "<leader>fr",
-                function() require("telescope.builtin").oldfiles() end,
-                desc = "Recent files"
-            }
+                function()
+                    require("telescope.builtin").oldfiles({ initial_mode = "normal" })
+                end,
+                desc = "Find recent files",
+            },
+            {
+                "<leader>fs",
+                function()
+                    require("telescope.builtin").grep_string({ initial_mode = "normal" })
+                end,
+                desc = "Find string under cursor",
+            },
         },
         opts = {
             defaults = {
-                borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┙", "┗" }
-            }
-        }
+                borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┙", "┗" },
+                layout_strategy = "vertical",
+                layout_config = { height = 0.95, },
+            },
+        },
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
@@ -45,11 +54,11 @@ return {
             require("telescope").setup({
                 extensions = {
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown {}
-                    }
-                }
+                        require("telescope.themes").get_dropdown({}),
+                    },
+                },
             })
             require("telescope").load_extension("ui-select")
-        end
-    }
+        end,
+    },
 }
