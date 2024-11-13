@@ -6,17 +6,17 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { "lua_ls", "rust_analyzer", "pyright", "ts_ls" },
+            ensure_installed = { "lua_ls", "pyright" },
         },
         config = true
     },
     {
         "neovim/nvim-lspconfig",
         keys = {
-            { "<leader>lh", function() vim.lsp.buf.hover() end,        desc = "Hover" },
-            { "<leader>la", function() vim.lsp.buf.code_action() end,  desc = "Show code actions" },
-            { "<leader>ld", function() vim.lsp.buf.definition() end,   desc = "Go to defition" },
-            { "<leader>lr", function() vim.lsp.buf.rename() end,       desc = "Rename" },
+            { "<leader>lh", function() vim.lsp.buf.hover() end,       desc = "Hover" },
+            { "<leader>la", function() vim.lsp.buf.code_action() end, desc = "Show code actions" },
+            { "<leader>ld", function() vim.lsp.buf.definition() end,  desc = "Go to defition" },
+            { "<leader>lr", function() vim.lsp.buf.rename() end,      desc = "Rename" },
             {
                 "<leader>lm",
                 function()
