@@ -7,16 +7,16 @@ return {
             {
                 "<leader>ff",
                 function()
-                    require("telescope.builtin").find_files()
+                    require("telescope.builtin").current_buffer_fuzzy_find()
                 end,
-                desc = "Find files by name",
+                desc = "Find in current buffer",
             },
             {
                 "<leader>fg",
                 function()
                     require("telescope.builtin").live_grep()
                 end,
-                desc = "Live grep in cwd",
+                desc = "Live grep across project",
             },
             {
                 "<leader>fo",
