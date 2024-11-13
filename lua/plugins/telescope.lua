@@ -39,6 +39,13 @@ return {
                 end,
                 desc = "Find string under cursor",
             },
+            {
+                "<leader>ls",
+                function()
+                    require("telescope.builtin").lsp_document_symbols({ initial_mode = "normal" })
+                end,
+                desc = "Search document symbols",
+            }
         },
         opts = {
             defaults = {
