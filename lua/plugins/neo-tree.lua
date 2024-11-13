@@ -3,16 +3,18 @@ return {
     branch = "v3.x",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
     },
     opts = {
         close_if_last_window = true,
         window = {
-            position = "left",
-            width = 26
+            position = "right",
+            width = 28
         },
-
+        use_libuv_file_watcher = true,
+        never_show = { ".DS_Store", },
+        follow_current_file = { enabled = true, leave_dirs_open = true, },
     },
     keys = {
         { "<leader>ft", "<cmd>Neotree toggle position=left<cr>", desc = "Toggle file tree" },
