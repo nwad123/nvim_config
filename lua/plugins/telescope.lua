@@ -5,7 +5,7 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
             {
-                "<leader>ff",
+                "<leader>fb",
                 function()
                     require("telescope.builtin").current_buffer_fuzzy_find()
                 end,
@@ -19,9 +19,9 @@ return {
                 desc = "Live grep across project",
             },
             {
-                "<leader>fo",
+                "<leader>ff",
                 function()
-                    require("telescope.builtin").find_files({ initial_mode = "normal" })
+                    require("telescope.builtin").find_files()
                 end,
                 desc = "Find files in cwd",
             },
