@@ -10,7 +10,7 @@ return {
         close_if_last_window = true,
         window = {
             position = "right",
-            width = 28
+            width = 35
         },
         use_libuv_file_watcher = true,
         never_show = { ".DS_Store", },
