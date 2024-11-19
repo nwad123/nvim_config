@@ -1,6 +1,12 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/nvim-cmp",
+		},
 		keys = {
 			{
 				"<leader>lh",
@@ -54,10 +60,12 @@ return {
 		},
 		config = function()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.rust_analyzer.setup({})
-			lspconfig.pyright.setup({})
-			lspconfig.clangd.setup({})
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			lspconfig.lua_ls.setup({ capabilities = capabilities })
+			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+			lspconfig.pyright.setup({ capabilities = capabilities })
+			lspconfig.clangd.setup({ capabilities = capabilities })
 		end,
 	},
 }
