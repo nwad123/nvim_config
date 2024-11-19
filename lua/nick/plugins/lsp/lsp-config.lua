@@ -1,9 +1,39 @@
 return {
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+		},
+		opts = {
+			ensure_installed = {
+				"prettier",
+				"stylua",
+				"isort",
+				"black",
+				"pylint",
+				"clang-format",
+			},
+		},
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+		},
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+				"pyright",
+				"clangd",
+				"rust_analyzer",
+			},
+		},
+		config = true,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/nvim-cmp",
 		},
@@ -61,6 +91,11 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
+			vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
+			vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
+			vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
