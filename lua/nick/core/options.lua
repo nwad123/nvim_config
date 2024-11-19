@@ -36,7 +36,8 @@ vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSig
 vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
 vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
-local border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
+-- local border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" }
+local border = "┏━┓┃┛━┗┃"
 
 vim.diagnostic.config({
 	virtual_text = false,
