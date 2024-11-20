@@ -26,6 +26,7 @@ return {
 				"pyright",
 				"clangd",
 				"rust_analyzer",
+				"texlab",
 			},
 		},
 		config = true,
@@ -114,6 +115,7 @@ return {
 			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.clangd.setup({ capabilities = capabilities })
+			lspconfig.texlab.setup({ capabilities = capabilities })
 		end,
 	},
 }
