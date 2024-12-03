@@ -7,5 +7,6 @@ return {
 	---@type render.md.UserConfig
 	opts = {
 		latex = { enabled = false },
+		heading = { position = "inline" },
 	},
 }
