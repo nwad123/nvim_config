@@ -13,7 +13,7 @@ set.relativenumber = true
 
 -- wrap options
 set.scrolloff = 8
-set.wrap = true
+set.wrap = false
 
 -- search options
 set.ignorecase = true
