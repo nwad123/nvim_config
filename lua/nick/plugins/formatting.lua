@@ -10,6 +10,7 @@ return {
 			python = { "isort", "black" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			haskell = { "ormolu" },
 		},
 	},
 	keys = {
@@ -19,11 +20,11 @@ return {
 				require("conform").format({
 					lsp_fallback = true,
 					async = false,
-					timeout_ms = 750,
+					timeout_ms = 1500,
 				})
 			end,
 			mode = { "n", "v" },
-			desc = "Format buffer or range (in visual mode",
+			desc = "Format buffer or range (in visual mode)",
 		},
 	},
 }
