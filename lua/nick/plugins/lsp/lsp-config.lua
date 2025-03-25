@@ -35,6 +35,7 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/nvim-cmp",
 		},
@@ -111,11 +112,24 @@ return {
 				return orig_util_open_floating_preview(contents, syntax, opts, ...)
 			end
 
-			-- iterate over all possible lsp servers and set them up
-			-- TODO: I know we can do something with 'on_attach' but that's for another day :)
-			for _, v in pairs(lspconfig.util.available_servers()) do
-				lspconfig[v].setup({ capabilities = capabilities })
-			end
+			-- Actual setup party, idk why this is an "advanced feature"
+			require("mason-lspconfig").setup_handlers({
+				function(server_name)
+					lspconfig[server_name].setup({ capabilities = capabilities })
+				end,
+				["lua_ls"] = function()
+					require("lspconfig").lua_ls.setup({
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { "vim" },
+								},
+							},
+						},
+						capabilities = capabilities,
+					})
+				end,
+			})
 		end,
 	},
 }
