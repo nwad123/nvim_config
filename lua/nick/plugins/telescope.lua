@@ -50,7 +50,7 @@ return {
         opts = {
             defaults = {
                 borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┙", "┗" },
-                layout_strategy = "vertical",
+                layout_strategy = "horizontal",
                 layout_config = { height = 0.95, },
             },
         },
