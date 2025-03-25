@@ -111,12 +111,11 @@ return {
 				return orig_util_open_floating_preview(contents, syntax, opts, ...)
 			end
 
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-			lspconfig.pyright.setup({ capabilities = capabilities })
-			lspconfig.clangd.setup({ capabilities = capabilities })
-			lspconfig.texlab.setup({ capabilities = capabilities })
-            lspconfig.ts_ls.setup({ capabilities = capabilities })
+            -- iterate over all possible lsp servers and set them up
+            -- TODO: I know we can do something with 'on_attach' but that's for another day :)
+		    for _, v in pairs(lspconfig.util.available_servers()) do
+		        lspconfig[v].setup({capabilities = capabilities})
+		    end
 		end,
 	},
 }
