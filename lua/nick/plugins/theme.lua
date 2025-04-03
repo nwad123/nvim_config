@@ -23,7 +23,7 @@
 return {
 	"rebelot/kanagawa.nvim",
 	priority = 10,
-    lazy = false,
+	lazy = false,
 	config = function()
 		require("kanagawa").setup({
 			compile = true, -- enable compiling the colorscheme
@@ -39,7 +39,23 @@ return {
 			colors = { -- add/modify theme and palette colors
 				palette = {},
 				theme = {
-					wave = {},
+					wave = {
+						ui = {
+							fg = "#c5c9c5", -- palette.dragonWhite
+							fg_dim = "#C8C093", -- palette.oldWhite
+							fg_reverse = "#223249", -- palette.waveBlue1
+
+							bg_dim = "#12120f", -- palette.dragonBlack1
+							bg_gutter = "#282727", -- palette.dragonBlack4
+
+							bg_m3 = "#0d0c0c", -- palette.dragonBlack0
+							bg_m2 = "#12120f", -- palette.dragonBlack1
+							bg_m1 = "#1D1C19", -- palette.dragonBlack2
+							bg = "#181616", -- palette.dragonBlack3
+							bg_p1 = "#282727", -- palette.dragonBlack4
+							bg_p2 = "#393836", -- palette.dragonBlack5
+						},
+					},
 					lotus = {},
 					dragon = {},
 					all = {
@@ -69,9 +85,13 @@ return {
 					-- MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
 				}
 			end,
+			theme = "wave",
+			background = {
+				dark = "wave",
+				light = "lotus",
+			},
 		})
 
 		vim.cmd.colorscheme("kanagawa")
 	end,
 }
-
