@@ -59,8 +59,10 @@ return {
 
 					-- Popular plugins that open floats will link to NormalFloat by default;
 					-- set their background accordingly if you wish to keep them dark and borderless
-					-- LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-					-- MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+					LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+					MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+
+					-- Modern Telescope UI form documenation
 					TelescopeTitle = { fg = theme.ui.special, bold = true },
 					TelescopePromptNormal = { bg = theme.ui.bg_p1 },
 					TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
