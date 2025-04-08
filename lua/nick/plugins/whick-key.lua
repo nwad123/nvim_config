@@ -13,13 +13,24 @@ return {
 				-- Base keybinds
 				mode = { "n" },
 				{ "<leader>q", "<cmd>q<cr>", desc = "quit" },
+                -- Buffer keybinds
 				{
-					"<leader>b",
+					"<leader>bl",
 					group = "buffers",
 					expand = function()
 						return require("which-key.extras").expand.buf()
 					end,
 				},
+                {
+                    "<leader>bn",
+                    "<cmd>bn<cr>",
+                    desc = "next buffer",
+                },
+                {
+                    "<leader>bp",
+                    "<cmd>bp<cr>",
+                    desc = "past buffer",
+                },
 				{ "B", "<cmd>b#<cr>", desc = "Switch to most recent buffer" },
 			},
 			{
